@@ -1,0 +1,118 @@
+@use '../abstracts/' as *;
+
+.contact {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    max-width: 1396px;
+
+    @include smallDesktop {
+        padding: 0;
+    }
+
+    &__container {
+        display: flex;
+        width: 100%;
+        max-width: 1396px;
+        margin: 0 auto;
+        border-radius: 8px;
+        border: 2px solid $border-color;
+        box-shadow: 0 10px 50px rgb(166 209 237 / 20%);
+        overflow: hidden;
+
+        @include smallDesktop {
+            border-radius: 0;
+            border-left: 0;
+            border-right: 0;
+        }
+
+        &--left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 32%;
+            min-height: 100%;
+            padding: 32px 24px;
+            background-image: url("./../assets/images/contact-svg-bg.svg");
+            border-right: 1px solid $border-color;
+        }
+
+        &--right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 68%;
+            min-height: 100%;
+            padding: 32px 24px;
+            background-image: url("./../assets/images/form-bg.png");
+            background-size: cover;
+        }
+        
+    }
+}
+
+.contact--left {
+
+    &__logo {
+        margin-bottom: 16px;
+
+        svg {
+            color: $color-palette-b;
+            width: 100px;
+            height: 100px;
+            transform: rotate(180deg);
+            opacity: 0.92;
+        }
+    }
+
+    &__title {
+        color: $white;
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    &__contact {
+        list-style-type: none;
+        margin-top: 32px;
+
+        & .contact__icon {
+            color: $color-palette-b;
+            font-size: 3.6rem;
+            margin-bottom: 8px;
+            opacity: 0.92;
+            transition: color 150ms;
+        }
+
+        & .contact__anchor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: $white;
+        }
+
+        &:hover .contact__icon {
+            opacity: 1;
+            color: $white;
+        }
+    }
+
+}
+
+.contact--right {
+
+    &__title {
+        font-size: 4rem;
+        margin-bottom: 32px;
+    }
+}
+
+.contact__form {
+    width: 100%;
+    max-width: 680px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+}

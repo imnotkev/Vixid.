@@ -1,0 +1,149 @@
+@use '../abstracts/' as *;
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url("./../assets/images/card-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    box-shadow: 0 10px 50px rgb(166 209 237 / 20%);
+    border-radius: 8px;
+    padding: 96px 48px;
+    border: 1px solid $border-color;
+    cursor: default;
+    overflow: hidden;
+    position: relative;
+    transition: box-shadow 300ms, scale 300ms;
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        z-index: 1;
+    }
+
+    &__title {
+        text-transform: capitalize;
+        font-size: 2.4rem;
+    }
+
+    &__price {
+        font-size: 3.2rem;
+        color: $typo-dark;
+        font-family: $secondary-font;
+        font-weight: 400;
+    }
+
+    &__perks {
+        display: flex;
+        flex-direction: column;
+        padding:  16px;
+        z-index: 1;
+    }
+
+    &__delivery {
+        text-align: center;
+        opacity: 0.8;
+    }
+
+    &__btn {
+        padding: 16px 32px;
+        background-color: transparent;
+        color: $color-palette-c;
+        border: 2px solid $color-palette-c;
+        z-index: 1;
+        margin-top: 16px;
+
+        &:hover {
+            background-color: $color-palette-c;
+            color: $white;
+        }
+   
+    }
+
+    &__icon {
+        position: absolute;
+        font-size: 28rem !important;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $color-palette-c;
+        opacity: 0.04;
+        z-index: 0;
+    }
+
+    &__divider {
+        width: 80%;
+        height: 2px;
+        background-color: $color-palette-c;
+        opacity: 0.5;
+        margin: 16px 0;
+    }
+
+    &--primary {
+        background: -webkit-linear-gradient(-70deg, $color-palette-d, $color-palette-c);
+
+        .pricing-card {
+
+            &__title {
+                -webkit-text-fill-color: initial;
+            }
+
+            &__top *,
+            &__perks *  {
+                color: $white;
+            }
+
+            &__btn {
+                background-color: transparent;
+                background-image: none;
+                border: 2px solid $white;
+                color: $white;
+
+                &:hover {
+                    background-color: $white;
+                    color: $color-palette-c;
+                }
+            }
+
+            &__delivery {
+                color: $white;
+            }
+
+            &__icon {
+                color: $white;
+            }
+
+            &__divider {
+                background-color: $white;
+            }
+
+        }
+    }
+}
+
+.perk {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin-bottom: 16px;
+
+    &__icon {
+        margin-right: 8px;
+        font-size: 1.6rem !important;
+        color: $color-palette-b;
+    }
+
+    &--not {
+        color: $color-palette-c;
+        opacity: 0.3;
+
+        & svg {
+            color: $color-palette-c;
+        }
+    }
+}

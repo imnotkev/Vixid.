@@ -1,0 +1,51 @@
+@use '../abstracts/' as *;
+
+.portfolio {
+
+    &__title {
+        text-align: center;
+    }
+
+    &__lists {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 32px;
+    }
+
+    &__list {
+        list-style-type: none;
+        padding: 0 20px;
+        margin: 0;
+        font-size: 1.6rem;
+        cursor: pointer;
+        position: relative;
+        transition: color 300ms;
+        text-transform: uppercase;
+
+
+        &:hover {
+            color: $typo-dark;
+        }
+
+        &--current {
+            color: $typo-dark;
+        }
+
+        &--current::after {
+            content: "";
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $color-palette-b;
+        }
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 24px;
+    }
+}

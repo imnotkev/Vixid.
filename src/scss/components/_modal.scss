@@ -1,0 +1,110 @@
+@use '../abstracts/' as *;
+
+.modal {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: 2px;
+    outline: none;
+    padding: 8px;
+    animation-name: fade-in;
+    animation-duration: 0.15s;
+
+    @include largeDesktop {
+        width: 72%;
+     }
+
+    @include smallDesktop {
+        flex-direction: column;
+        min-width: 40%;
+    }
+
+    &__img {
+        width: 50%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        display: block;
+        @include smallDesktop {
+            width: 100%;
+            padding: 16px;
+        }
+    }
+
+    &__desc {
+        width: 60%;
+        padding:32px;
+
+        @include smallDesktop {
+            width: 100%;
+            padding: 24px;
+        }
+    }
+
+    &__title {
+        font-size: 2.6rem;
+        line-height: 1;
+    }
+
+    &__category {
+        display: flex;
+
+        .category__list {
+            font-family: $secondary-font;
+            color: $color-palette-d;
+            font-size: 1.8rem;
+            list-style-type: none;
+            margin-right: 16px;
+        }
+    }
+
+    &__para {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+    }
+
+    &__btn {
+        padding: 12px 24px;
+        background: -webkit-linear-gradient(-70deg, $color-palette-d, $color-palette-c);
+        color: $white;
+        border-radius: 2px;
+
+        &--close {
+            display: none;
+            @include smallDesktop {
+                display: initial;
+                margin-left: 16px;
+            }
+        }
+    }
+
+    &__close {
+        background-color: transparent;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        color: $color-palette-c;
+        @include smallDesktop {
+            display: none;
+        }
+
+        & svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        &:hover {
+            color: $color-palette-d;
+        }
+    }
+}
+
+@keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}

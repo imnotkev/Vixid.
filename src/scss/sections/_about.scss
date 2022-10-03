@@ -1,0 +1,70 @@
+@use '../abstracts/' as *;
+
+.about {
+    position: relative;
+    z-index: 1;
+    max-width: 1396px;
+
+    @include smallDesktop {
+      padding: 0;
+  }
+
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1;
+        background-image: url("./../assets/images/form-bg.png");
+        background-size: cover;
+        background-position: top;
+        border: 1px solid $border-color;
+        border-radius: 8px;
+        box-shadow: 0 10px 50px rgb(166 209 237 / 20%);
+
+        @include smallDesktop {
+         border-radius: 0;
+         border-left: none;
+         border-right: none;
+      }
+     }
+ 
+     &__desc {
+         width: 70%;
+         padding: 0 40px;
+     }
+
+     &__title {
+        color: $white;
+     }
+
+     &__para {
+      max-width: 720px;
+     }
+
+     &__img {
+        width: 100%;
+        min-height: 100%;
+        aspect-ratio: 1 / 1.3;
+        object-fit: cover;
+        display: block;
+
+        &--wrapper {
+            width: 30%;
+            background-color: $white;
+            border-radius: 8px 0 0 8px;
+            overflow: hidden;
+
+            @include smallDesktop {
+               border-radius: 0;
+            }
+        }
+               
+     }
+   
+     &__socials {
+        display: flex;
+        margin-top: 16px;
+     }
+}

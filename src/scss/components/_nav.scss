@@ -1,0 +1,113 @@
+@use '../abstracts/' as *;
+
+.nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 32px 0;
+    z-index: 999;
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    transition: all 300ms ease-out;
+
+    // NavbarBG on scroll
+    &--scrolling {
+        background-color: $nav-bg-color;
+        box-shadow: 0 0 10px rgb(166 209 237 / 30%);
+        padding: 16px 0;
+        border-bottom: 1px solid $border-color;
+    }
+
+    &--scrolling &__logo {
+        scale: 0.92;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 300ms ease-out;
+        cursor: pointer;
+
+        svg {
+            color: $white;
+            background-image: linear-gradient(45deg, $color-palette-d 0%, $color-palette-c 100%);
+            width: 56px;
+            height: 56px;
+            border-radius: 4px;
+            padding: 6px;
+            transform: rotate(180deg);
+            
+        }
+
+        &:hover &__logo--text{
+            color: $typo-light;
+        }
+    }
+
+    &__logo--text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 8px;
+        transition: color 300ms;
+        
+
+        h2{
+            font-size: 4rem;
+            line-height: 1;
+        }
+    }
+
+    &__lists {
+        display: flex;
+    }
+
+
+    &__list {
+        list-style-type: none;
+        padding: 0 20px;
+
+        &--link {
+            color: $typo-light;
+            font-size: 1.6rem;
+            font-weight: 500;
+            transition: color 300ms ease-out;
+            cursor: pointer;
+
+            &:hover {
+                color: $typo-dark;
+            }
+        }
+
+        &--link--primary {
+            color: $color-palette-b;
+            padding: 8px 16px;
+            border-radius: 24px;
+            border: 1px solid $color-palette-b;
+            background-image: none;
+            transition: all 300ms;
+
+            &:hover {
+            background-color: $color-palette-b;
+            color: $white;
+            }
+        }
+    } 
+
+}
+
+// Active nav-link
+.active {
+    color: $color-palette-b !important;
+}

@@ -1,0 +1,38 @@
+@use '../abstracts/' as *;
+
+.pricing {
+
+    &__title {
+        text-align: center;
+        text-transform: capitalize;
+    }
+
+    &__sub-title {
+        text-align: center;
+        font-family: $primary-font;
+        font-weight: 400;
+        color: $typo-light;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+
+        &--bottom {
+            margin-bottom: 0;
+            margin-top: 16px;
+        }
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 32px;
+    }
+
+    &__subscription {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+}
+
